@@ -1,0 +1,107 @@
+{
+ "keyword": "sui bridge",
+ "h1": "Sui Bridge",
+ "brand": "Sui Bridge",
+ "niche": "bridge",
+ "verb": "Bridge",
+ "title": "Sui Bridge - Open App",
+ "meta_description": "sui bridge routes you to the official app for moving supported ETH, WETH, WBTC, LBTC, or USDT between Ethereum and Sui.",
+ "palette": {
+  "mode": "dark",
+  "bg": "#011829",
+  "accent": "#4DA2FF",
+  "ink": "#FFFFFF"
+ },
+ "hero_h2": "Move assets between Ethereum and the Sui network",
+ "hero_lead": "Sui Bridge is the native Sui network route for moving supported assets between Ethereum and Sui through the official app, with transfers governed by Sui validators.",
+ "badge": "Native Bridge",
+ "widget": {
+  "from": "ETH",
+  "from_net": "Ethereum",
+  "to": "ETH",
+  "to_net": "Sui",
+  "action": "Open Sui Bridge App"
+ },
+ "trust": [
+  "Official app domain: bridge.sui.io",
+  "Governed by Sui validators",
+  "Supported assets listed in Sui docs"
+ ],
+ "what_is": "Sui Bridge is Sui's native bridge for moving supported tokens between Sui and other networks; the <a href='https://docs.sui.io/onchain-finance/fungible-tokens/sui-bridging'>official documentation</a> describes supported assets, package IDs, contract addresses, source code, audits, and limits.",
+ "how": [
+  {
+   "t": "Choose direction",
+   "d": "Open the app, select the source network and destination network, then connect the wallets required for that route."
+  },
+  {
+   "t": "Select an asset",
+   "d": "Pick a supported token, enter the amount, and review the app details before approving anything."
+  },
+  {
+   "t": "Confirm on source",
+   "d": "Approve the token if required, then sign the source-chain transaction in your wallet."
+  },
+  {
+   "t": "Track completion",
+   "d": "Follow the bridge status in the app and verify the destination balance before making another move."
+  }
+ ],
+ "points": [
+  {
+   "h": "Native route",
+   "p": "Built for the Sui network and operated by Sui validators, with governance handled by validator voting."
+  },
+  {
+   "h": "Asset coverage",
+   "p": "The docs list WBTC, LBTC, ETH, WETH, and USDT as supported assets; availability can still depend on direction and app state."
+  },
+  {
+   "h": "Verify the domain",
+   "p": "Start from <a href='https://www.sui.io/'>Sui's official site</a> or bridge.sui.io, then confirm token, wallet, and network details before signing."
+  }
+ ],
+ "eeat": [
+  {
+   "text": "Sui bridging documentation",
+   "url": "https://docs.sui.io/onchain-finance/fungible-tokens/sui-bridging"
+  },
+  {
+   "text": "Sui official site",
+   "url": "https://www.sui.io/"
+  },
+  {
+   "text": "Ethereum bridge contract",
+   "url": "https://etherscan.io/address/0xda3bD1fE1973470312db04551B65f401Bc8a92fD"
+  }
+ ],
+ "faq": [
+  {
+   "q": "What is Sui Bridge?",
+   "a": "Sui Bridge is the native Sui bridge for moving supported assets between Sui and other networks through the official app at bridge.sui.io.",
+   "open": true
+  },
+  {
+   "q": "Is Sui Bridge the official app?",
+   "a": "Yes, Sui documentation points users to bridge.sui.io for the native bridge experience; always verify the domain before connecting a wallet.",
+   "open": false
+  },
+  {
+   "q": "What assets does Sui Bridge support?",
+   "a": "Sui docs list WBTC, LBTC, ETH, WETH, and USDT as supported assets, though available routes can vary by direction and app state.",
+   "open": false
+  },
+  {
+   "q": "Who operates Sui Bridge?",
+   "a": "Sui Bridge is operated and governed by Sui validators, and bridge actions require validator signatures with a threshold of voting power.",
+   "open": false
+  },
+  {
+   "q": "How do I verify Sui Bridge contracts?",
+   "a": "Use the contract and address links in the official docs, including the <a href='https://etherscan.io/address/0xda3bD1fE1973470312db04551B65f401Bc8a92fD'>Ethereum bridge contract</a>, before relying on copied addresses.",
+   "open": false
+  }
+ ],
+ "official_url": "https://bridge.sui.io/",
+ "official_domain": "bridge.sui.io",
+ "footer_note": "This page is not the official app; verify bridge.sui.io before connecting a wallet. Educational content only, not financial advice."
+}
