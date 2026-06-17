@@ -1,0 +1,85 @@
+{
+  "key_facts": {
+    "Category": "Native bridge",
+    "Network": "Sui and Ethereum",
+    "Token": "ETH, WETH, USDT, WBTC, LBTC",
+    "Custody": "Validator-governed bridge contracts"
+  },
+  "intent": [
+    {
+      "q": "Sui Bridge supported assets",
+      "a": "Sui Bridge is the native bridge for the Sui network. Sui documentation lists supported assets for Sui Bridge as Wrapped Bitcoin (WBTC), Lightning Bitcoin (LBTC), Ethereum (ETH), Wrapped Ethereum (WETH), and Tether (USDT). The bridge is designed for moving digital assets between Sui and other blockchains, with documentation specifically describing native and wrapped ETH movement to and from Sui. Users should not assume every Sui asset is supported by the native bridge; Sui docs also mention other bridge routes such as Wormhole Connect, Portal Bridge, and ZetaChain for broader asset and chain coverage."
+    },
+    {
+      "q": "Sui Bridge fees and limits",
+      "a": "Sui Bridge costs include source-chain gas, destination-chain gas or execution costs, and any bridge-specific limits. The official Sui docs describe a global limiter that constrains the value of assets leaving Sui Bridge in a rolling 24-hour window and also caps maximum single transfers. The docs note that limits vary by direction, such as Ethereum to Sui versus Sui to Ethereum, and are set by validator committee vote. There is no simple fixed fee answer that covers every transfer. Users should check the bridge quote, route, current limits, and the source chain's gas cost before sending funds."
+    },
+    {
+      "q": "Sui Bridge Ethereum to Sui",
+      "a": "For Ethereum to Sui transfers, Sui Bridge uses official bridge contracts and Sui validator-governed operations. The workflow is to connect a wallet, choose Ethereum as the source, choose Sui as the destination, select a supported asset such as ETH, WETH, USDT, WBTC, or LBTC where available, and confirm the transaction. The Sui docs identify the Ethereum mainnet Sui Bridge contract and Sui package/object references, which helps users verify they are not interacting with a fake bridge. Always confirm bridge.sui.io and the token address before approving assets."
+    },
+    {
+      "q": "Sui Bridge validator governance",
+      "a": "Sui Bridge is operated and governed by Sui validators, according to Sui documentation. Bridge transfers and actions require validator signatures with a threshold of voting power, and governance is handled through validator voting. This matters because Sui Bridge is not just a third-party bridge widget embedded beside Sui; it is a native bridge architecture integrated with the network's validator set. The tradeoff is that users still face bridge-contract, validator, operational, pricing, and limiter risks, so large transfers should be tested and verified carefully."
+    },
+    {
+      "q": "Sui Bridge vs Wormhole",
+      "a": "Sui Bridge and Wormhole serve different search intents. Sui Bridge is the native Sui bridge and supports a narrower list of assets such as ETH, WETH, USDT, WBTC, and LBTC through Sui's validator-governed bridge system. Wormhole Connect and Portal Bridge support broader cross-chain routing and many more assets across networks, but assets may arrive as Wormhole-minted representations or use different security assumptions. Users should choose Sui Bridge when the native supported asset and route fit, and Wormhole when they need broader chain coverage or token availability."
+    }
+  ],
+  "compare": {
+    "title": "Sui Bridge vs Wormhole",
+    "rows": [
+      ["Dimension", "Sui Bridge", "Wormhole"],
+      ["Role", "Native Sui bridge", "General cross-chain messaging and bridge network"],
+      ["Governance", "Sui validator governed", "Wormhole guardian and protocol design"],
+      ["Assets", "Focused supported asset list", "Broader multi-chain token coverage"],
+      ["Best use", "Native Sui-supported transfers", "Routes across many chains and assets"]
+    ]
+  },
+  "faq": [
+    {
+      "q": "What is Sui Bridge?",
+      "a": "Sui Bridge is the native bridge for the Sui network. It enables supported assets to move between Sui and other blockchains while using Sui's validator-governed bridge architecture. The official bridge interface is bridge.sui.io, and technical details are documented in the Sui documentation."
+    },
+    {
+      "q": "Which assets does Sui Bridge support?",
+      "a": "Sui documentation lists WBTC, LBTC, ETH, WETH, and USDT as supported assets for Sui Bridge. Support can change through governance and bridge upgrades, so users should confirm available assets in the live bridge interface before approving or sending any token."
+    },
+    {
+      "q": "Does Sui Bridge have transfer limits?",
+      "a": "Yes. Sui docs describe a global limiter that caps the value of assets leaving Sui Bridge in a 24-hour window and caps maximum single transfers. Limits can vary by direction and are set by validator committee vote. Users should check current limits before planning large transfers."
+    },
+    {
+      "q": "Who operates Sui Bridge?",
+      "a": "Sui Bridge is operated and governed by Sui validators. Bridge actions require validator signatures meeting a voting-power threshold. Governance is handled by validator voting, which makes the bridge part of Sui's native infrastructure rather than a purely external bridge provider."
+    },
+    {
+      "q": "Where is the Sui Bridge Ethereum contract?",
+      "a": "Sui documentation lists the Sui Bridge contract on Ethereum mainnet and links it to Etherscan. Users should verify the contract from the official Sui docs rather than from social posts or search ads, because bridge impersonation is a common crypto attack path."
+    },
+    {
+      "q": "Can I bridge USDC to Sui with Sui Bridge?",
+      "a": "The Sui Bridge supported-asset list in the Sui docs does not present native Sui Bridge USDC support in the same list as ETH, WETH, USDT, WBTC, and LBTC. Users looking for USDC routes may need Wormhole Connect, Portal Bridge, ZetaChain, or another supported provider, depending on current availability."
+    }
+  ],
+  "niche": {
+    "type": "bridge",
+    "asset": "ETH",
+    "receive": "ETH on Sui",
+    "supported_networks": ["Sui", "Ethereum"]
+  },
+  "authority": [
+    { "text": "Sui Bridge app", "url": "https://bridge.sui.io/" },
+    { "text": "Sui bridging documentation", "url": "https://docs.sui.io/onchain-finance/fungible-tokens/sui-bridging" },
+    { "text": "Sui Bridge Ethereum contract", "url": "https://etherscan.io/address/0xda3bd1fe1973470312db04551b65f401bc8a92fd" },
+    { "text": "Sui GitHub", "url": "https://github.com/MystenLabs/sui" },
+    { "text": "Sui explorer", "url": "https://suiscan.xyz/" },
+    { "text": "Sui official site", "url": "https://sui.io/" }
+  ],
+  "sameAs": [
+    "https://x.com/SuiNetwork",
+    "https://github.com/MystenLabs/sui",
+    "https://www.coingecko.com/en/coins/sui"
+  ]
+}
