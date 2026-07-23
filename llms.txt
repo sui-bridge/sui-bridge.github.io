@@ -1,66 +1,31 @@
 # Sui Bridge
-> Sui Bridge is Sui’s native, validator-operated protocol for transferring supported assets between Ethereum and Sui.
 
-## What is Sui Bridge
-Sui Bridge is a bidirectional, open-source bridge built into Sui’s core architecture. It solves cross-chain incompatibility by locking Ethereum assets and issuing corresponding Sui Move coin representations. Unlike third-party bridges such as Wormhole, it is governed and secured by Sui validators rather than a separate guardian network. This independent dashboard is informational and does not execute transfers or custody funds.
-
-## How it works
-1. Connect Ethereum and Sui wallets, select the direction, asset, amount, and recipient, then approve any required ERC-20 allowance.
-2. For Ethereum-to-Sui transfers, assets enter the Ethereum bridge contract; bridge nodes independently verify the finalized deposit.
-3. A permissionless client collects stake-weighted ECDSA signatures from the Sui Bridge Committee and submits them to the destination contract.
-4. The Sui package verifies the threshold and mints the corresponding Sui asset. Returning to Ethereum burns the Sui representation and requires the user to submit a manual Ethereum claim releasing escrowed assets.
+> Sui Bridge is Sui's native, validator-secured protocol for moving supported assets between Ethereum Mainnet and Sui Mainnet in either direction.
 
 ## Key facts
-- Main route: Ethereum Mainnet, EIP-155 chain ID 1, ↔ Sui Mainnet.
-- Supported assets documented by Sui are WBTC, LBTC, ETH, WETH, and USDT.
-- Ethereum assets are native ETH or ERC-20 tokens; Sui representations are Move coin types.
-- Security depends on stake-weighted signatures from a committee of Sui validators.
-- Bridge messages use recoverable secp256k1 ECDSA signatures and threshold verification.
-- The interface never receives private keys, but bridged Ethereum assets are held by smart contracts.
-- A global limiter constrains rolling outbound value and maximum individual transfers.
-- Sui Bridge package ID is `0xb`; its shared bridge object is `0x9`.
-- The Ethereum Mainnet bridge contract is `0xda3bD1fE1973470312db04551B65f401Bc8a92fD`.
+- Route: Ethereum Mainnet (chain ID 1)  Sui Mainnet
+- Deposit: Finalized Ethereum deposit, then mint on Sui
+- Withdraw: Burn on Sui, then a manual Ethereum claim
+- Gas: ETH on Ethereum, SUI on Sui
+- Custody: Non-custodial — your wallet signs
+- Verify: Use the official contracts; beware fake bridge sites
 
-## Common questions
-### Is Sui Bridge safe?
-It inherits Sui-validator security and its v1 code was audited by OtterSec and Zellic. Audits do not remove smart-contract, validator, wallet, chain-finality, or operational risk.
-
-### Is it custodial?
-It is non-custodial at the interface level: users sign with their own wallets. During bridging, source assets are escrowed in protocol smart contracts.
-
-### What fees apply?
-Users pay applicable source-chain gas, ERC-20 approval gas, and Ethereum gas for a return claim. Review the live estimate before signing because network costs vary.
-
-### How long does a transfer take?
-Ethereum-to-Sui transfers generally take minutes and must await Ethereum finality; the official launch guide estimated around ten minutes. Sui-to-Ethereum completion also depends on the user submitting the claim.
-
-### Which assets and chains are supported?
-The native route connects Ethereum and Sui; official documentation lists WBTC, LBTC, ETH, WETH, and USDT. Third-party bridges may support different chains and create different token representations.
-
-### What are the main risks?
-Key risks include contract defects, committee compromise or liveness failure, incorrect recipient addresses, token-representation confusion, network disruption, and limiter-related delays.
+## On this page
+- [What is Sui Bridge?](https://sui-bridge.github.io/#what)
+- [How bridging works](https://sui-bridge.github.io/#how)
+- [Depositing to the destination](https://sui-bridge.github.io/#deposit)
+- [Withdrawing back](https://sui-bridge.github.io/#withdraw)
+- [Time and fees](https://sui-bridge.github.io/#fees)
+- [Is Sui Bridge safe?](https://sui-bridge.github.io/#safety)
+- [Problems and fixes](https://sui-bridge.github.io/#troubleshoot)
+- [FAQ](https://sui-bridge.github.io/#faq)
 
 ## App
-- Dashboard: https://sui-bridge.github.io/
-- App: https://sui-bridge.github.io/dashboard/
+- [Sui Bridge dashboard](https://sui-bridge.github.io/)
+- [Open the app](https://sui-bridge.github.io/dashboard/)
 
-## Official resources
-Official bridge: https://bridge.sui.io/
-Sui bridging documentation: https://docs.sui.io/onchain-finance/fungible-tokens/sui-bridging
-Mainnet launch announcement: https://blog.sui.io/sui-bridge-launches-on-mainnet/
-Architecture and security model: https://blog.sui.io/sui-bridge-architecture/
-Move source code: https://github.com/MystenLabs/sui/tree/main/crates/sui-framework/packages/bridge
-Solidity source code: https://github.com/MystenLabs/sui/tree/main/bridge/evm
-Bridge node source code: https://github.com/MystenLabs/sui/tree/main/crates/sui-bridge
-OtterSec audit: https://github.com/sui-foundation/security-audits/blob/main/docs/Sui_bridge_v1_OtterSec.pdf
-Zellic audit: https://github.com/sui-foundation/security-audits/blob/main/docs/Sui_Bridge_v1_Zellic.pdf
-Official Sui X: https://x.com/SuiNetwork
-
-## Data & references
-Ethereum bridge contract on Etherscan: https://etherscan.io/address/0xda3bd1fe1973470312db04551b65f401bc8a92fd
-Sui bridge package on Suiscan: https://suiscan.xyz/mainnet/object/0x000000000000000000000000000000000000000000000000000000000000000b/txs
-Sui bridge object on Suiscan: https://suiscan.xyz/mainnet/object/0x0000000000000000000000000000000000000000000000000000000000000009
-Sui Bridge metrics on DeFiLlama: https://defillama.com/protocol/suibridge
-Sui Bridge volume on DeFiLlama: https://defillama.com/protocol/bridges/suibridge
-SUI market data on CoinGecko: https://www.coingecko.com/en/coins/sui
-ERC-20 standard: https://eips.ethereum.org/EIPS/eip-20
+## Sources
+- [docs.sui.io](https://docs.sui.io/onchain-finance/fungible-tokens/sui-bridging)
+- [github.com](https://github.com/MystenLabs/sui/blob/main/bridge/SUI_NATIVE_BRIDGE_PRIMER.md)
+- [suianalytics.io](https://suianalytics.io/)
+- [eth.blockscout.com](https://eth.blockscout.com/address/0xda3bd1fe1973470312db04551b65f401bc8a92fd)

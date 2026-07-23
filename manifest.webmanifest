@@ -1,0 +1,19 @@
+{
+  "name": "Sui Bridge",
+  "short_name": "Sui Bridge",
+  "description": "Sui Bridge is Sui's native validator-operated bridge between Ethereum and Sui. Learn the route, how lock-and-mint works, fees, safety checks, and fixes.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "lang": "en",
+  "background_color": "#f5f6f8",
+  "theme_color": "#f5f6f8",
+  "icons": [
+    {
+      "src": "favicon.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
