@@ -1,19 +1,20 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Sui Bridge — Dashboard</title>
-  <meta name="description" content="Sui Bridge is Sui's native validator-operated bridge between Ethereum and Sui. Learn the route, how lock-and-mint works, fees, safety checks, and fixes.">
-  <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
-  <meta name="theme-color" content="#f5f6f8">
-  <link rel="canonical" href="https://sui-bridge.github.io/">
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="apple-touch-icon" href="favicon.png">
-  <link rel="manifest" href="manifest.webmanifest">
-  <link rel="image_src" href="og-cover.png">
-  <link rel="preconnect" href="https://api.coingecko.com" crossorigin>
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Sui Bridge — Dashboard</title>
+<meta content="Sui Bridge is Sui's native validator-operated bridge between Ethereum and Sui. Learn the route, how lock-and-mint works, fees, safety checks, and fixes." name="description"/>
+<meta content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" name="robots"/>
+<meta content="#f5f6f8" name="theme-color"/>
+<link href="https://sui-bridge.github.io/" rel="canonical"/>
+<link href="favicon.png" rel="icon" type="image/png"/>
+<link href="favicon.png" rel="apple-touch-icon"/>
+<link href="manifest.webmanifest" rel="manifest"/>
+<link href="og-cover.png" rel="image_src"/>
+<link crossorigin="" href="https://api.coingecko.com" rel="preconnect"/>
+<style>
 /* Sui Bridge — independent single-page hub. */
 :root {
   color-scheme: light;
@@ -112,7 +113,7 @@ html:not(.js) .menu-btn { display: none; }
 
 /* ───────── main / topbar ───────── */
 .main { flex: 1; min-width: 0; display: flex; flex-direction: column; }
-.topbar { position: sticky; top: 0; z-index: 40; flex: 0 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 12px 20px; flex-wrap: wrap; padding: 11px 26px; border-bottom: 1px solid var(--line); background: rgba(255, 255, 255, 0.82); backdrop-filter: blur(10px); }
+.topbar { position: relative; z-index: 40; flex: 0 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 12px 20px; flex-wrap: wrap; padding: 21px 26px; border-bottom: 0; background: transparent; }
 .topbar-right { display: flex; align-items: center; gap: 10px 18px; flex-wrap: wrap; }
 .mode-switch { display: inline-flex; align-items: center; gap: 10px; }
 .ms-label { font-size: 13.5px; font-weight: 700; color: var(--muted); transition: color 150ms var(--ease); }
@@ -176,6 +177,44 @@ html:not(.js) .menu-btn { display: none; }
 .content .lead-in { padding: clamp(4px, 1vh, 12px) 0 clamp(10px, 2.5vh, 22px); }
 .content .lead-in > p { margin: 0 0 16px; font-size: 15px; line-height: 1.66; color: var(--text); }
 .content .lead-in > p strong { color: var(--ink); font-weight: 700; }
+/* premium feature card (modern-site feel) */
+.content .lead-in .feat{position:relative;width:min(1120px,calc(100vw - 44px));margin-left:50%;transform:translateX(-50%);display:grid;grid-template-columns:1.08fr .92fr;align-items:stretch;background:linear-gradient(165deg,#141824,#0b0e15);border:1px solid rgba(255,255,255,.09);border-radius:28px;overflow:hidden;box-shadow:0 52px 120px -55px rgba(0,0,0,.82)}
+.feat-l{padding:clamp(32px,4vw,64px);display:flex;flex-direction:column;justify-content:center}
+.feat-l h2{margin:0;font-size:clamp(2.2rem,4.6vw,3.2rem);line-height:1.03;font-weight:800;letter-spacing:-.03em;color:#fff}
+.feat-lead{margin:20px 0 0;font-size:17px;line-height:1.6;color:rgba(255,255,255,.9);max-width:48ch}
+.content .lead-in .feat-lead a{color:#fff;text-decoration:underline;text-decoration-color:rgba(255,255,255,.55);text-underline-offset:3px}
+.content .lead-in .feat-lead a:hover{text-decoration-color:#fff}
+.feat-cta{margin:32px 0 0}
+.content .lead-in .feat-btn{display:inline-flex;align-items:center;gap:10px;padding:17px 38px;border-radius:999px;background:linear-gradient(135deg,var(--accent),color-mix(in srgb,var(--accent) 50%,#7c4dff));color:#fff;font-weight:750;font-size:16.5px;text-decoration:none;box-shadow:0 20px 44px -12px var(--accent-glow);transition:transform .16s var(--ease),box-shadow .16s var(--ease)}
+.content .lead-in .feat-btn:hover{transform:translateY(-2px);box-shadow:0 26px 56px -14px var(--accent-glow)}
+.feat-btn .arr{transition:transform .18s var(--ease)}
+.content .lead-in .feat-btn:hover .arr{transform:translateX(3px)}
+.feat-more{margin:18px 0 0}
+.feat-readmore{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:7px;font-size:13.5px;font-weight:700;color:rgba(255,255,255,.7);transition:color .15s var(--ease)}
+.feat-readmore::-webkit-details-marker{display:none}
+.feat-readmore:hover{color:#fff}
+.feat-readmore .chev{width:15px;height:15px;transition:transform .2s var(--ease)}
+.feat-more[open] .feat-readmore .chev{transform:rotate(180deg)}
+.feat-detail{margin:20px 0 0;font-size:14.5px;line-height:1.72;color:rgba(255,255,255,.82)}
+.content .lead-in .feat-detail a{color:#fff;text-decoration:underline;text-decoration-color:rgba(255,255,255,.55);text-underline-offset:3px}
+.feat-more:not([open]) .feat-detail{display:none}
+.content .lead-in .feat-lead{color:rgba(255,255,255,.9)}
+.content .lead-in .feat-detail,.content .lead-in .feat-detail p{color:rgba(255,255,255,.82)}
+.feat-facts{display:grid;grid-template-columns:1fr 1fr;gap:0 26px;margin:18px 0 2px}
+.feat-fact{padding:10px 0;border-top:1px solid rgba(255,255,255,.1)}
+.feat-fact .fl{display:block;font-size:10px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:rgba(255,255,255,.5);margin:0 0 3px}
+.feat-fact .fv{display:block;font-size:12.5px;line-height:1.5;color:rgba(255,255,255,.88)}
+.feat-r{position:relative;overflow:hidden;min-height:clamp(300px,32vw,440px);background:radial-gradient(120% 105% at 70% 22%,color-mix(in srgb,var(--accent) 52%,#1a1030),#0a0d14 70%)}
+.feat-r::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:36px 36px;-webkit-mask:radial-gradient(70% 72% at 64% 36%,#000,transparent 76%);mask:radial-gradient(70% 72% at 64% 36%,#000,transparent 76%)}
+.feat-badge{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;width:clamp(122px,16vw,166px);height:clamp(122px,16vw,166px);border-radius:34px;display:grid;place-items:center;background:linear-gradient(160deg,rgba(255,255,255,.18),rgba(255,255,255,.02));box-shadow:0 38px 84px -22px var(--accent-glow),inset 0 0 0 1px rgba(255,255,255,.18)}
+.feat-badge img{width:52%;height:52%;object-fit:contain}
+@media (max-width:860px){
+  .content .lead-in .feat{width:calc(100vw - 28px);grid-template-columns:1fr}
+  .feat-l{padding:30px 22px 32px}
+  .feat-r{min-height:200px}
+  .feat-facts{grid-template-columns:1fr}
+}
+
 .tbl.spec table { min-width: 0; }
 .tbl.spec td:first-child { color: var(--muted); font-weight: 600; white-space: nowrap; width: 1%; }
 .content .sec { border-top: 1px solid var(--line); scroll-margin-top: 66px; }
@@ -323,168 +362,190 @@ html.js .reveal.in { opacity: 1; transform: none; }
 .mnote { text-align: center; font-size: 11px; color: var(--muted); margin: 12px 2px 0; line-height: 1.5; }
 .mnote a { color: var(--accent-2); font-weight: 600; text-decoration: none; }
 @media (prefers-reduced-motion: reduce) { .scrollcue2 svg, .mspin { animation: none; } .mbar i { transition: none; } }
+/* docs layout (sticky TOC + open sections) */
+.docs{position:relative;width:min(1120px,calc(100vw - 44px));margin-left:50%;transform:translateX(-50%);display:grid;grid-template-columns:236px minmax(0,1fr);gap:clamp(28px,4vw,60px);margin-top:clamp(40px,6vh,72px);align-items:start}
+.toc{position:sticky;top:74px;align-self:start;max-height:calc(100dvh - 96px);overflow:auto}
+.toc-h{margin:0 0 10px;font-size:10.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);padding-left:13px}
+.toc a{display:block;padding:7px 13px;border-left:2px solid var(--line);color:var(--muted);font-size:13px;font-weight:600;line-height:1.35;text-decoration:none;transition:color .15s var(--ease),border-color .15s var(--ease)}
+.toc a:hover{color:var(--ink)}
+.toc a.active{color:var(--accent-2);border-left-color:var(--accent);font-weight:750}
+.doc-main{min-width:0}
+.content .doc-sec{border:1px solid var(--line);border-radius:20px;background:var(--panel);box-shadow:0 1px 3px rgba(17,24,39,.04);margin:0 0 16px;padding:0;scroll-margin-top:82px;transition:box-shadow .26s var(--ease),border-color .26s var(--ease)}
+.content .doc-sec:first-child{border-top:1px solid var(--line)}
+.content .doc-sec:hover{border-color:var(--line-2);box-shadow:0 16px 40px -22px rgba(17,24,39,.18)}
+.content .doc-sec[open]{border-color:var(--line)}
+.content .doc-sec>summary{cursor:default;pointer-events:none;padding:clamp(20px,3vh,28px) clamp(22px,3.2vw,32px) 8px;list-style:none}
+.content .doc-sec>summary::-webkit-details-marker{display:none}
+.content .doc-sec>summary::after{display:none}
+.content .doc-sec>summary h2{font-size:clamp(1.2rem,2.3vw,1.5rem)}
+.content .doc-sec .sec-body{padding:0 clamp(22px,3.2vw,32px) clamp(22px,3.4vh,30px);max-width:74ch}
+.content .doc-sec.field-notes{border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:20px;background:var(--panel);box-shadow:0 1px 3px rgba(17,24,39,.04);margin:0 0 16px;padding:clamp(22px,3vh,28px) clamp(22px,3.2vw,32px)}
+.content .doc-sec.field-notes h2{font-size:clamp(1.2rem,2.3vw,1.5rem)}
+.content .doc-sec.field-notes .fn-body{max-width:74ch}
+@media (max-width:900px){
+  .docs{grid-template-columns:1fr;width:calc(100vw - 28px);gap:0}
+  .toc{position:sticky;top:56px;z-index:20;display:flex;gap:8px;overflow-x:auto;max-height:none;background:var(--bg);padding:11px 2px;margin:0 0 6px;border-bottom:1px solid var(--line);-webkit-overflow-scrolling:touch}
+  .toc-h{display:none}
+  .toc a{flex:0 0 auto;white-space:nowrap;border-left:0;border:1px solid var(--line);border-radius:999px;padding:8px 15px;font-size:12.5px}
+  .toc a.active{color:var(--accent-2);border-color:var(--accent);background:var(--accent-soft)}
+}
+.site-foot{width:min(1120px,calc(100vw - 44px));margin:clamp(34px,5vh,60px) auto 0;padding:22px 2px clamp(30px,4vh,48px);color:var(--faint);font-size:12.5px;line-height:1.6}
+.site-foot p{margin:0 0 6px;max-width:82ch}
+.site-foot strong{color:var(--muted);font-weight:700}
+.site-foot .foot-fine{font-size:11.5px}
   </style>
-  <meta property="og:type" content="website"><meta property="og:url" content="https://sui-bridge.github.io/">
-  <meta property="og:title" content="Sui Bridge — Dashboard">
-  <meta property="og:description" content="Sui Bridge is Sui's native validator-operated bridge between Ethereum and Sui. Learn the route, how lock-and-mint works, fees, safety checks, and fixes.">
-  <meta property="og:site_name" content="Sui Bridge"><meta property="og:image" content="https://sui-bridge.github.io/og-cover.png">
-  <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Sui Bridge — independent dashboard">
-  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Sui Bridge — Dashboard">
-  <meta name="twitter:description" content="Sui Bridge is Sui's native validator-operated bridge between Ethereum and Sui. Learn the route, how lock-and-mint works, fees, safety checks, and fixes."><meta name="twitter:image" content="https://sui-bridge.github.io/og-cover.png">
-  <script type="application/ld+json">
+<meta content="website" property="og:type"/><meta content="https://sui-bridge.github.io/" property="og:url"/>
+<meta content="Sui Bridge — Dashboard" property="og:title"/>
+<meta content="Sui Bridge is Sui's native validator-operated bridge between Ethereum and Sui. Learn the route, how lock-and-mint works, fees, safety checks, and fixes." property="og:description"/>
+<meta content="Sui Bridge" property="og:site_name"/><meta content="https://sui-bridge.github.io/og-cover.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/><meta content="630" property="og:image:height"/><meta content="Sui Bridge — independent dashboard" property="og:image:alt"/>
+<meta content="summary_large_image" name="twitter:card"/><meta content="Sui Bridge — Dashboard" name="twitter:title"/>
+<meta content="Sui Bridge is Sui's native validator-operated bridge between Ethereum and Sui. Learn the route, how lock-and-mint works, fees, safety checks, and fixes." name="twitter:description"/><meta content="https://sui-bridge.github.io/og-cover.png" name="twitter:image"/>
+<script type="application/ld+json">
   {"@context": "https://schema.org", "@graph": [{"@type": "WebSite", "@id": "https://sui-bridge.github.io/#website", "url": "https://sui-bridge.github.io/", "name": "Sui Bridge", "inLanguage": "en"}, {"@type": "SoftwareApplication", "@id": "https://sui-bridge.github.io/#brand", "name": "Sui bridge", "alternateName": ["Sui Bridge", "Sui"], "description": "Cross-chain bridge routes for moving assets to and from Sui, via native or third-party bridges.", "sameAs": ["https://docs.sui.io/onchain-finance/fungible-tokens/sui-bridging", "https://github.com/MystenLabs/sui/blob/main/bridge/SUI_NATIVE_BRIDGE_PRIMER.md", "https://github.com/sui-foundation/security-audits/blob/main/docs/Sui_bridge_v1_OtterSec.pdf", "https://github.com/sui-foundation/security-audits/blob/main/docs/Sui_Bridge_v1_Zellic.pdf", "https://www.coingecko.com/en/coins/sui"], "applicationCategory": "FinanceApplication", "operatingSystem": "Web"}, {"@type": "WebPage", "@id": "https://sui-bridge.github.io/#webpage", "url": "https://sui-bridge.github.io/", "name": "Sui Bridge — Dashboard", "description": "Sui Bridge is Sui's native validator-operated bridge between Ethereum and Sui. Learn the route, how lock-and-mint works, fees, safety checks, and fixes.", "isPartOf": {"@id": "https://sui-bridge.github.io/#website"}, "about": {"@id": "https://sui-bridge.github.io/#brand"}, "mainEntity": {"@id": "https://sui-bridge.github.io/#brand"}, "inLanguage": "en", "dateModified": "2026-07-21"}, {"@type": "FAQPage", "@id": "https://sui-bridge.github.io/#faq", "mainEntity": [{"@type": "Question", "name": "Is this the official Sui Bridge site?", "acceptedAnswer": {"@type": "Answer", "text": "No. This is an independent informational dashboard — it doesn't execute transfers or custody funds. Transfers happen at the official interface, which you should always reach by typing the URL yourself rather than clicking ads or search results."}}, {"@type": "Question", "name": "How long does a Sui Bridge transfer take?", "acceptedAnswer": {"@type": "Answer", "text": "Deposits complete after your Ethereum transaction finalizes and the bridge committee's signatures are collected, so timing tracks Ethereum congestion. Withdrawals add a second step: after the Sui-side burn, you must submit a manual Ethereum claim, which is only done once that transaction confirms."}}, {"@type": "Question", "name": "How do I bridge from Ethereum to Sui?", "acceptedAnswer": {"@type": "Answer", "text": "Connect an Ethereum wallet and a Sui wallet, select the asset (WBTC, LBTC, ETH, WETH, or USDT), amount, and recipient, approve the ERC-20 allowance if prompted, then sign the deposit. The minted Move coin appears on Sui once the deposit is finalized and verified."}}, {"@type": "Question", "name": "Do I need SUI before bridging to Sui?", "acceptedAnswer": {"@type": "Answer", "text": "Not to receive the bridged asset, but effectively yes to use it — every action on Sui needs SUI for gas. Keep a small SUI balance in the destination wallet, and keep ETH on the Ethereum side for approvals and any return claim."}}, {"@type": "Question", "name": "Is Sui Bridge safe to use?", "acceptedAnswer": {"@type": "Answer", "text": "It's secured by stake-weighted signatures from Sui validators and the v1 code was audited by OtterSec and Zellic, but no audit removes smart-contract, cross-chain, or phishing risk. Verify the site URL and the Ethereum contract address before signing, and never enter a seed phrase anywhere."}}, {"@type": "Question", "name": "Should I use the native bridge or a third-party one like Wormhole?", "acceptedAnswer": {"@type": "Answer", "text": "The native bridge is validator-operated and covers the core Ethereum  Sui route for its supported asset list; third-party bridges use separate guardian or relayer networks and often support more chains and tokens. Pick based on the exact asset and route you need, and compare the quoted fees — the native bridge primer explains the design trade-offs."}}]}]}
   </script>
 </head>
 <body>
-  <a class="skip" href="#main">Skip to content</a>
-  <div class="shell">
-    <main class="main" id="main">
-      <header class="topbar">
-        <div class="topbar-left">
-          <button class="menu-btn" type="button" aria-label="Open navigation menu" aria-controls="sideNav" aria-expanded="false" data-nav-open><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
-          <a class="topbar-logo" href="./" aria-label="Sui Bridge home"><img src="favicon.png" width="20" height="20" alt="Sui Bridge logo"></a>
-          <h1 class="wordmark">Sui Bridge</h1>
-        </div>
-        <div class="topbar-right">
-          <div class="ticker" aria-label="Live metrics">
-            <a class="tick" href="https://defillama.com/chain/Sui" target="_blank" rel="noopener noreferrer" aria-label="Sui TVL"><span>Sui TVL</span> <b id="sig-ctvl">…</b> <span class="ext" aria-hidden="true">↗</span></a>
-            <a class="tick" href="https://www.coingecko.com/en/coins/sui" target="_blank" rel="noopener noreferrer" aria-label="Sui"><span>Sui</span> <b id="sig-sui">…</b> <span class="ext" aria-hidden="true">↗</span></a>
-            <a class="tick" href="https://www.coingecko.com/en/coins/ethereum" target="_blank" rel="noopener noreferrer" aria-label="ETH"><span>ETH</span> <b id="sig-ethereum">…</b> <span class="ext" aria-hidden="true">↗</span></a>
-            </div>
-        </div>
-      </header>
-
-            <section class="hero2">
-        <div class="hero2-l">
-          <h2 class="hero2-h">Move Assets Between Ethereum and Sui</h2>
-          <p class="hero2-lead"><strong>Sui Bridge</strong> is Sui's native, validator-secured protocol for moving supported assets between Ethereum Mainnet and Sui Mainnet in either direction.</p>
-          <div class="hero2-cta">
-            <a class="btn2 btn2-primary" href="dashboard/" target="_blank" rel="noopener noreferrer">Open the Sui Bridge <span class="go" aria-hidden="true">↗</span></a>
-            <a class="btn2 btn2-ghost" href="#what">How it works</a>
-          </div>
-        </div>
-        <div class="hero2-r">
-        <section class="swap-card" id="swap-preview" aria-labelledby="preview-title">
-          <div class="card-head">
-            <p class="card-title" id="preview-title">Preview</p>
-            <span class="preview-tag"><span aria-hidden="true"></span>Preview only</span>
-          </div>
-          <div class="leg">
-            <span class="asset" id="asset-from"><span class="tok"><img src="eth.png" alt="Ethereum token" width="24" height="24" loading="lazy" decoding="async"></span><b>Ethereum</b><svg class="chev-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></span>
-            <span class="leg-amt"><span class="amount">0.00</span><span class="leg-sub">Preview</span></span>
-          </div>
-          <button class="swap-arrow" id="route-swap" type="button" aria-label="Swap preview direction" title="Swap preview direction">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M8 4v13M8 4L4 8M8 4l4 4M16 20V7M16 20l-4-4M16 20l4-4"/></svg>
-          </button>
-          <div class="leg">
-            <span class="asset" id="asset-to"><span class="tok"><img src="base.png" alt="Base token" width="24" height="24" loading="lazy" decoding="async"></span><b>Base</b><svg class="chev-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></span>
-            <span class="leg-amt"><span class="amount">0.00</span><span class="leg-sub">Preview</span></span>
-          </div>
-          <div class="route-panel">
-            <div class="route-info"><b id="route-name">Deposit · Ethereum → Sui</b><span>Non-custodial bridge route</span></div>
-            <div class="route-tok"><span class="tok sm"><img src="base.png" alt="Base token" width="18" height="18" loading="lazy" decoding="async"></span> Base</div>
-          </div>
-          <div class="route-row"><span>Type</span><b>Bridge route</b></div>
-          <div class="route-row"><span>Custody</span><b>Non-custodial</b></div>
-          <a class="swap-cta" href="dashboard/" target="_blank" rel="noopener noreferrer"><svg class="cta-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4"/></svg>Go to Swap<span class="cta-go" aria-hidden="true">→</span></a>
-        </section>
-        </div>
-        <a class="scrollcue2" href="#what" aria-label="Scroll to learn more"><span>Scroll</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 5v14M12 19l-6-6M12 19l6-6"/></svg></a>
-      </section>
-
-            <div class="content">
-        <div class="lead-in reveal">
-          <p>Sui Bridge is the native bridging protocol built into Sui's core architecture: it locks supported assets on Ethereum and issues corresponding Move coin representations on Sui, with security enforced by Sui validators rather than a third-party guardian set. In practice you connect an Ethereum wallet and a Sui wallet at the <a href="https://bridge.sui.io/">official bridge interface</a>, pick a direction and asset, approve the ERC-20 allowance if needed, and sign. This page is an independent dashboard for reference only — it does not execute transfers and never touches your funds.</p>
-          <div class="tbl spec"><table><tbody><tr><td>Route</td><td>Ethereum Mainnet (chain ID 1) <-> Sui Mainnet</td></tr><tr><td>Deposit</td><td>Finalized Ethereum deposit, then mint on Sui</td></tr><tr><td>Withdraw</td><td>Burn on Sui, then a manual Ethereum claim</td></tr><tr><td>Gas</td><td>ETH on Ethereum, SUI on Sui</td></tr><tr><td>Custody</td><td>Non-custodial — your wallet signs</td></tr><tr><td>Verify</td><td>Use the official contracts; beware fake bridge sites</td></tr></tbody></table></div>
-        </div>
-
-        <details id="what" class="sec reveal">
-          <summary><h2>What is Sui Bridge?</h2></summary>
-          <div class="sec-body"><p>Sui Bridge is a bidirectional, open-source bridge operated by Sui validators themselves, not an external network. When you send a supported asset from Ethereum, it is locked in the Ethereum bridge contract and an equivalent Move coin type is minted on Sui; going back, the Sui representation is burned and the escrowed Ethereum asset is released. That validator-operated design is the key difference from third-party routes such as Wormhole, which rely on a separate guardian set — a distinction Sui laid out when the <a href="https://blog.sui.io/sui-bridge-launches-on-mainnet/">bridge launched on mainnet</a>. Supported assets documented by Sui are WBTC, LBTC, ETH, WETH, and USDT; anything else needs a different route. A global limiter also caps rolling outbound value and individual transfer size, so very large moves can be throttled by design.</p></div>
-        </details>
-
-        <details id="how" class="sec reveal">
-          <summary><h2>How bridging works</h2></summary>
-          <div class="sec-body"><p>Mechanically, a deposit is a lock-and-mint: your tokens enter the Ethereum bridge contract, bridge nodes independently verify the finalized deposit, and a permissionless client collects stake-weighted ECDSA signatures from the Sui Bridge Committee and submits them to the destination. The Sui package checks the threshold — signatures use recoverable secp256k1 — and mints the Sui asset. The return trip is burn-and-claim: the Sui representation is burned, and you then submit a manual claim transaction on Ethereum to release the escrowed funds. Two things trip people up: the ERC-20 approval is a separate transaction from the deposit itself, and the approval only needs to cover the amount you're actually bridging. The <a href="https://docs.sui.io/onchain-finance/fungible-tokens/sui-bridging">Sui bridging documentation</a> walks the full flow.</p></div>
-        </details>
-
-        <details id="deposit" class="sec reveal">
-          <summary><h2>Depositing to the destination</h2></summary>
-          <div class="sec-body"><p>Ethereum-to-Sui is the simpler direction. Connect both wallets, choose the asset and amount, confirm the recipient Sui address, approve the token allowance if the asset is an ERC-20, then sign the deposit. Bridge nodes verify the deposit only after it finalizes on Ethereum, so expect the mint to follow Ethereum finality rather than your wallet's confirmation toast — congestion on Ethereum stretches this. Keep ETH for the approval and deposit gas, and make sure the receiving Sui wallet holds a little SUI so you can actually do anything with the bridged asset once it lands. If the mint hasn't appeared, check the deposit transaction's status on an Ethereum explorer before assuming failure.</p></div>
-        </details>
-
-        <details id="withdraw" class="sec reveal">
-          <summary><h2>Withdrawing back</h2></summary>
-          <div class="sec-body"><p>Sui-to-Ethereum has an extra step most first-timers miss: burning the Sui-side asset does not complete the withdrawal. Once the committee's signatures cover your burn, you must submit a manual claim transaction on Ethereum to release the escrowed tokens, and that claim costs Ethereum gas. Don't resubmit the burn while waiting — duplicating transactions is a common way to create confusion and waste gas. The outbound limiter can also delay large withdrawals during high-volume periods, so size matters. Until your claim confirms on Ethereum, the assets are still in escrow, which is normal — pending is not lost.</p></div>
-        </details>
-
-        <details id="fees" class="sec reveal">
-          <summary><h2>Time and fees</h2></summary>
-          <div class="sec-body"><p>There is no flat quoted fee to memorize; what you pay is chain gas at each step. On a deposit that's the ERC-20 approval gas plus the deposit transaction on Ethereum. On a withdrawal it's a Sui-side transaction plus an Ethereum gas payment for the manual claim, which is usually the most expensive single step. Check the live estimate your wallet shows before every signature, because Ethereum gas swings wildly by time of day. If you route through a third-party bridge instead of the native one, expect a provider or relayer fee on top of gas — read that quote line before confirming.</p></div>
-        </details>
-
-        <details id="safety" class="sec reveal">
-          <summary><h2>Is Sui Bridge safe?</h2></summary>
-          <div class="sec-body"><p>Reasonably engineered, not risk-free. Security rests on stake-weighted signatures from a committee of Sui validators, and the v1 code was audited by OtterSec and Zellic — but audits don't remove smart-contract, validator, wallet, chain-finality, or operational risk, and bridged assets sit in escrow contracts while in transit. Your own habits are the bigger attack surface: fake bridge sites and malicious approvals drain far more users than protocol exploits. Verify the interface URL, and confirm you're interacting with the real <a href="https://eth.blockscout.com/address/0xda3bD1fE1973470312db04551B65f401Bc8a92fD">Ethereum bridge contract</a> — 0xda3bD1fE1973470312db04551B65f401Bc8a92fD — before signing anything. The interface never asks for your seed phrase or private key; any site that does is a scam, full stop.</p></div>
-        </details>
-
-        <details id="troubleshoot" class="sec reveal">
-          <summary><h2>Problems and fixes</h2></summary>
-          <div class="sec-body"><p>Most issues come from a short list. Wrong network: your Ethereum wallet must be on Mainnet (chain ID 1) — bridging UI dead-ends are often just a wallet pointed at a testnet or L2. No destination gas: bridged assets arriving in a Sui wallet with zero SUI are stuck until you fund it; keep a small SUI balance there permanently. Pending deposit: check the Ethereum transaction first — if it's not finalized, nothing downstream has happened yet, so wait rather than resubmit. Pending withdrawal: you probably haven't submitted the manual Ethereum claim; go back and do it. And if a 'bridge' site asked for a seed phrase or an unlimited approval out of nowhere, disconnect, revoke the approval, and treat it as phishing.</p></div>
-        </details>
-
-        <details id="faq" class="sec reveal">
-          <summary><h2>Sui FAQ</h2></summary>
-          <div class="sec-body">
-          <details class="qa"><summary>Is this the official Sui Bridge site?</summary><div class="a"><p><p>No. This is an independent informational dashboard — it doesn't execute transfers or custody funds. Transfers happen at the official interface, which you should always reach by typing the URL yourself rather than clicking ads or search results.</p></p></div></details>
-          <details class="qa"><summary>How long does a Sui Bridge transfer take?</summary><div class="a"><p><p>Deposits complete after your Ethereum transaction finalizes and the bridge committee's signatures are collected, so timing tracks Ethereum congestion. Withdrawals add a second step: after the Sui-side burn, you must submit a manual Ethereum claim, which is only done once that transaction confirms.</p></p></div></details>
-          <details class="qa"><summary>How do I bridge from Ethereum to Sui?</summary><div class="a"><p><p>Connect an Ethereum wallet and a Sui wallet, select the asset (WBTC, LBTC, ETH, WETH, or USDT), amount, and recipient, approve the ERC-20 allowance if prompted, then sign the deposit. The minted Move coin appears on Sui once the deposit is finalized and verified.</p></p></div></details>
-          <details class="qa"><summary>Do I need SUI before bridging to Sui?</summary><div class="a"><p><p>Not to receive the bridged asset, but effectively yes to use it — every action on Sui needs SUI for gas. Keep a small SUI balance in the destination wallet, and keep ETH on the Ethereum side for approvals and any return claim.</p></p></div></details>
-          <details class="qa"><summary>Is Sui Bridge safe to use?</summary><div class="a"><p><p>It's secured by stake-weighted signatures from Sui validators and the v1 code was audited by OtterSec and Zellic, but no audit removes smart-contract, cross-chain, or phishing risk. Verify the site URL and the Ethereum contract address before signing, and never enter a seed phrase anywhere.</p></p></div></details>
-          <details class="qa"><summary>Should I use the native bridge or a third-party one like Wormhole?</summary><div class="a"><p><p>The native bridge is validator-operated and covers the core Ethereum <-> Sui route for its supported asset list; third-party bridges use separate guardian or relayer networks and often support more chains and tokens. Pick based on the exact asset and route you need, and compare the quoted fees — the <a href="https://github.com/MystenLabs/sui/blob/main/bridge/SUI_NATIVE_BRIDGE_PRIMER.md">native bridge primer</a> explains the design trade-offs.</p></p></div></details>
-          </div>
-        </details>
-
-        <section class="field-notes reveal" id="notes">
-          <h2>Notes before you use Sui Bridge</h2>
-          <div class="fn-body"><p><strong>Practitioner take:</strong> the native bridge is the straightforward path for Ethereum-to-Sui moves of its supported assets, and the mechanics are simple once you accept that the return trip is two transactions, not one.</p><p>The common mistake is burning the Sui-side asset and walking away — the withdrawal isn't finished until you submit the manual Ethereum claim and pay that gas.</p><p><strong>Before you sign:</strong></p><ul><li>Confirm you're on the real bridge interface and interacting with the official Ethereum bridge contract, not a lookalike site.</li><li>Check both wallets are on the right networks: Ethereum Mainnet on one side, Sui Mainnet on the other, with the correct recipient address.</li><li>Keep gas on both chains — ETH for approvals and the return claim, SUI for anything you do after the deposit lands.</li><li>Understand the withdrawal flow: burn on Sui, then a manual claim on Ethereum, and don't resubmit while it's pending.</li></ul><p>Everything on this page was checked against Sui's published documentation and on-chain contract references, last reviewed 21 July 2026.</p><p><strong>Independent reference — confirm the route in your own wallet.</strong></p></div>
-        </section>
-      </div>
-    </main>
-    <aside class="sidebar">
-      <div class="side-top">
-        <div class="brand">
-          <a class="brand-logo" href="./" aria-label="Sui Bridge home"><img src="favicon.png" width="30" height="30" alt="Sui Bridge logo"></a>
-          <p class="brand-name">Sui</p>
-        </div>
-        <button class="nav-toggle" type="button" aria-label="Close navigation menu" aria-controls="sideNav" aria-expanded="false"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
-      </div>
-
-      <nav class="side-nav" id="sideNav" aria-label="Primary">
-        <p class="nav-label">Bridge</p>
-        <a class="nav-item is-active" href="#swap-preview" aria-current="true">
-          <svg class="ni-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M7 10h11l-3-3M17 14H6l3 3"/></svg>
-          Bridge preview
-        </a>
-        <p class="nav-label">On this page</p>
-        <details class="nav-group">
-          <summary>
-            <svg class="ni-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 5h10a3 3 0 0 1 3 3v11a2 2 0 0 0-2-2H4zM20 5h-1a3 3 0 0 0-3 3v11a2 2 0 0 1 2-2h2z"/></svg>
-            Guide sections
-            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
-          </summary>
-          <div class="nav-sub"><a href="#what">What is Sui Bridge?</a><a href="#how">How bridging works</a><a href="#deposit">Depositing to the destination</a><a href="#withdraw">Withdrawing back</a><a href="#fees">Time and fees</a><a href="#safety">Is Sui Bridge safe?</a><a href="#troubleshoot">Problems and fixes</a><a href="#faq">FAQ</a></div>
-        </details>
-      </nav>
-
-      <div class="sidebar-foot">
-        <p class="disclose"><strong>Independent</strong> Sui Bridge information dashboard. Not affiliated with any official product.</p>
-        <p class="fine">Live metrics are compiled from public APIs. Review your route in the official app before signing.</p>
-        <p class="fine">© 2026 Sui Bridge dashboard.</p>
-      </div>
-    </aside>
-    <div class="scrim" data-scrim></div>
-  </div>
+<a class="skip" href="#main">Skip to content</a>
+<div class="shell">
+<main class="main" id="main">
+<header class="topbar">
+<div class="topbar-left">
+<h1 class="wordmark">Sui Bridge</h1>
+</div>
+<div class="topbar-right">
+<div aria-label="Live metrics" class="ticker">
+<a aria-label="Sui TVL" class="tick" href="https://defillama.com/chain/Sui" rel="noopener noreferrer" target="_blank"><span>Sui TVL</span> <b id="sig-ctvl">…</b> <span aria-hidden="true" class="ext">↗</span></a>
+<a aria-label="Sui" class="tick" href="https://coinmarketcap.com/currencies/sui/" rel="noopener noreferrer" target="_blank"><span>Sui</span> <b id="sig-sui">…</b> <span aria-hidden="true" class="ext">↗</span></a>
+<a aria-label="ETH" class="tick" href="https://defillama.com/" rel="noopener noreferrer" target="_blank"><span>ETH</span> <b id="sig-ethereum">…</b> <span aria-hidden="true" class="ext">↗</span></a>
+</div>
+</div>
+</header>
+<section class="hero2">
+<div class="hero2-l">
+<h2 class="hero2-h">Move Assets Between Ethereum and Sui</h2>
+<p class="hero2-lead"><strong>Sui Bridge</strong> is Sui's native, validator-secured protocol for moving supported assets between Ethereum Mainnet and Sui Mainnet in either direction.</p>
+<div class="hero2-cta">
+<a class="btn2 btn2-primary" href="dashboard/" rel="noopener noreferrer" target="_blank">Open the Sui Bridge <span aria-hidden="true" class="go">↗</span></a>
+<a class="btn2 btn2-ghost" href="#what">How it works</a>
+</div>
+</div>
+<div class="hero2-r">
+<section aria-labelledby="preview-title" class="swap-card" id="swap-preview">
+<div class="card-head">
+<p class="card-title" id="preview-title">Preview</p>
+<span class="preview-tag"><span aria-hidden="true"></span>Preview only</span>
+</div>
+<div class="leg">
+<span class="asset" id="asset-from"><span class="tok"><img alt="Ethereum token" decoding="async" height="24" loading="lazy" src="eth.png" width="24"/></span><b>Ethereum</b><svg aria-hidden="true" class="chev-sm" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M6 9l6 6 6-6"></path></svg></span>
+<span class="leg-amt"><span class="amount">0.00</span><span class="leg-sub">Preview</span></span>
+</div>
+<button aria-label="Swap preview direction" class="swap-arrow" id="route-swap" title="Swap preview direction" type="button">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M8 4v13M8 4L4 8M8 4l4 4M16 20V7M16 20l-4-4M16 20l4-4"></path></svg>
+</button>
+<div class="leg">
+<span class="asset" id="asset-to"><span class="tok"><img alt="Base token" decoding="async" height="24" loading="lazy" src="base.png" width="24"/></span><b>Base</b><svg aria-hidden="true" class="chev-sm" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M6 9l6 6 6-6"></path></svg></span>
+<span class="leg-amt"><span class="amount">0.00</span><span class="leg-sub">Preview</span></span>
+</div>
+<div class="route-panel">
+<div class="route-info"><b id="route-name">Deposit · Ethereum → Sui</b><span>Non-custodial bridge route</span></div>
+<div class="route-tok"><span class="tok sm"><img alt="Base token" decoding="async" height="18" loading="lazy" src="base.png" width="18"/></span> Base</div>
+</div>
+<div class="route-row"><span>Type</span><b>Bridge route</b></div>
+<div class="route-row"><span>Custody</span><b>Non-custodial</b></div>
+<a class="swap-cta" href="dashboard/" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" class="cta-ico" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18 14v4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4"></path></svg>Go to Swap<span aria-hidden="true" class="cta-go">→</span></a>
+</section>
+</div>
+<a aria-label="Scroll to learn more" class="scrollcue2" href="#what"><span>Scroll</span><svg fill="none" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24"><path d="M12 5v14M12 19l-6-6M12 19l6-6"></path></svg></a>
+</section>
+<div class="content">
+<div class="lead-in reveal">
+<div class="feat">
+<div class="feat-l">
+<h2>Sui Bridge Protocol Architecture &amp; Route Overview</h2>
+<p class="feat-lead">Sui Bridge is the native bridging protocol built into Sui's core architecture: it locks supported assets on Ethereum and issues corresponding Move coin representations on Sui, with security enforced by Sui validators rather than a third-party guardian set.</p>
+<div class="feat-cta"><a class="feat-btn" href="dashboard/" rel="noopener noreferrer" target="_blank">Open the App <span aria-hidden="true" class="arr">→</span></a></div>
+<details class="feat-more">
+<summary class="feat-readmore">Read more <svg aria-hidden="true" class="chev" fill="none" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24"><path d="M6 9l6 6 6-6"></path></svg></summary>
+<div class="feat-detail">
+<p>In practice you connect an Ethereum wallet and a Sui wallet at the <a href="https://bridge.sui.io/">official bridge interface</a>, pick a direction and asset, approve the ERC-20 allowance if needed, and sign. This page is an independent dashboard for reference only — it does not execute transfers and never touches your funds.</p>
+<div class="feat-facts">
+<div class="feat-fact"><span class="fl">Route</span><span class="fv">Ethereum Mainnet (chain ID 1) &lt;-&gt; Sui Mainnet</span></div>
+<div class="feat-fact"><span class="fl">Deposit</span><span class="fv">Finalized Ethereum deposit, then mint on Sui</span></div>
+<div class="feat-fact"><span class="fl">Withdraw</span><span class="fv">Burn on Sui, then a manual Ethereum claim</span></div>
+<div class="feat-fact"><span class="fl">Gas</span><span class="fv">ETH on Ethereum, SUI on Sui</span></div>
+<div class="feat-fact"><span class="fl">Custody</span><span class="fv">Non-custodial — your wallet signs</span></div>
+<div class="feat-fact"><span class="fl">Verify</span><span class="fv">Use the official contracts; beware fake bridge sites</span></div>
+</div>
+</div>
+</details>
+</div>
+<div class="feat-r"><span class="feat-badge"><img alt="Sui Bridge" height="72" src="base.png" width="72"/></span></div>
+</div>
+</div>
+<div class="docs">
+<nav aria-label="On this page" class="toc">
+<p class="toc-h">On this page</p>
+<a href="#what">What is Sui Bridge?</a>
+<a href="#how">How bridging works</a>
+<a href="#deposit">Depositing to the destination</a>
+<a href="#withdraw">Withdrawing back</a>
+<a href="#fees">Time and fees</a>
+<a href="#safety">Is Sui Bridge safe?</a>
+<a href="#troubleshoot">Problems and fixes</a>
+<a href="#faq">Sui FAQ</a>
+<a href="#notes">Notes before you use Sui Bridge</a>
+</nav>
+<div class="doc-main">
+<details class="sec reveal doc-sec" id="what" open="">
+<summary><h2>What is Sui Bridge?</h2></summary>
+<div class="sec-body"><p>Sui Bridge is a bidirectional, open-source bridge operated by Sui validators rather than an external network: an Ethereum asset is locked and an equivalent Move coin type is minted on Sui, while the return route burns that Sui representation and releases the escrowed Ethereum asset. Its validator-operated model differs from third-party routes such as Wormhole, which use a separate guardian set, as described in <a href="https://blog.sui.io/sui-bridge-launches-on-mainnet/" rel="noopener noreferrer" target="_blank">Sui’s mainnet launch</a>. The documented supported assets are WBTC, LBTC, ETH, WETH, and USDT; another asset needs a different route. A global limiter caps rolling outbound value and individual transfer size, so a large transfer can be throttled by design.</p></div>
+</details>
+<details class="sec reveal doc-sec" id="how" open="">
+<summary><h2>How bridging works</h2></summary>
+<div class="sec-body"><p>Bridging uses lock-and-mint from Ethereum to Sui and burn-and-claim on the return route. For a deposit, tokens enter the Ethereum bridge contract, bridge nodes independently verify the finalized deposit, and a permissionless client collects stake-weighted ECDSA signatures from the Sui Bridge Committee and submits them to the destination. The Sui package checks the threshold using recoverable secp256k1 signatures, then mints the Sui asset; returning burns that representation and requires a manual Ethereum claim to release escrowed funds. An <a href="https://en.wikipedia.org/wiki/ERC-20" rel="noopener noreferrer" target="_blank">ERC-20 standard</a> token needs a separate allowance approval, and that approval only needs to cover the amount being bridged. The <a href="https://docs.sui.io/onchain-finance/fungible-tokens/sui-bridging" rel="noopener noreferrer" target="_blank">Sui bridging documentation</a> shows the complete flow.</p></div>
+</details>
+<details class="sec reveal doc-sec" id="deposit" open="">
+<summary><h2>Depositing to the destination</h2></summary>
+<div class="sec-body"><p>To deposit from Ethereum to Sui, connect both wallets, choose the asset and amount, confirm the recipient Sui address, approve the token allowance when the asset is an ERC-20, then sign the deposit. Bridge nodes verify it only after the Ethereum transaction finalizes, so minting follows Ethereum finality rather than a wallet confirmation toast; congestion on Ethereum can stretch the wait. Keep ETH for the approval and deposit gas, and keep a little SUI in the receiving wallet so you can use the bridged asset after it arrives. If the mint is missing, check the deposit transaction’s status on an Ethereum explorer before assuming failure.</p></div>
+</details>
+<details class="sec reveal doc-sec" id="withdraw" open="">
+<summary><h2>Withdrawing back</h2></summary>
+<div class="sec-body"><p>To withdraw from Sui to Ethereum, burn the Sui-side asset, wait for the committee’s signatures to cover that burn, then submit the manual Ethereum claim that releases the escrowed tokens; the claim costs Ethereum gas. Burning alone does not complete the withdrawal, so do not resubmit the burn while it is pending. The outbound limiter can delay large withdrawals during high-volume periods, and the assets remain in escrow until the claim confirms on Ethereum.</p></div>
+</details>
+<details class="sec reveal doc-sec" id="fees" open="">
+<summary><h2>Time and fees</h2></summary>
+<div class="sec-body"><p>Bridge fees are the chain-gas payments required by each transaction, not a flat quoted fee. A deposit uses Ethereum gas for the ERC-20 approval plus the deposit transaction; a withdrawal uses a Sui-side transaction plus Ethereum gas for the manual claim, usually the most expensive single step. <a href="https://ethereum.org/developers/docs/gas/" rel="noopener noreferrer" target="_blank">Ethereum’s gas documentation</a> explains the network-fee model; check the live estimate in your wallet before each signature because Ethereum gas varies over time. A third-party route can add a provider or relayer fee on top of gas, so read that quote line before confirming.</p></div>
+</details>
+<details class="sec reveal doc-sec" id="safety" open="">
+<summary><h2>Is Sui Bridge safe?</h2></summary>
+<div class="sec-body"><p>Sui Bridge’s security model is stake-weighted signatures from a committee of Sui validators, while bridged assets remain in escrow during transit; its v1 code was audited by OtterSec and Zellic. An audit does not remove smart-contract, validator, wallet, chain-finality, or operational risk, and fake interfaces or malicious approvals add user-side risk. Before signing, verify the interface URL and the <a href="https://eth.blockscout.com/address/0xda3bD1fE1973470312db04551B65f401Bc8a92fD" rel="noopener noreferrer" target="_blank">Ethereum bridge contract</a> at 0xda3bD1fE1973470312db04551B65f401Bc8a92fD. The interface does not ask for a seed phrase or private key; a site that does is phishing.</p></div>
+</details>
+<details class="sec reveal doc-sec" id="troubleshoot" open="">
+<summary><h2>Problems and fixes</h2></summary>
+<div class="sec-body"><p>Fix the network, gas, or transaction-state mismatch first: the Ethereum wallet must be on Mainnet (chain ID 1), not a testnet or L2, and a destination Sui wallet with zero SUI cannot use the bridged asset until funded, so keep a small SUI balance there. For a pending deposit, check whether the Ethereum transaction finalized before resubmitting anything; for a pending withdrawal, check whether the manual Ethereum claim was submitted after the Sui burn.</p></div>
+</details>
+<details class="sec reveal doc-sec" id="faq" open="">
+<summary><h2>Sui FAQ</h2></summary>
+<div class="sec-body">
+<details class="qa"><summary>Is this the official Sui Bridge site?</summary><div class="a"><p><p>No. This is an independent informational dashboard; it does not execute transfers or custody funds. Transfers happen at the official interface, which you should reach by typing the URL rather than clicking ads or search results.</p></p></div></details>
+<details class="qa"><summary>How long does a Sui Bridge transfer take?</summary><div class="a"><p><p>Deposits complete after the Ethereum transaction finalizes and the bridge committee’s signatures are collected. Withdrawals add a second step: after the Sui-side burn, submit the manual Ethereum claim and wait for that transaction to confirm.</p></p></div></details>
+<details class="qa"><summary>How do I bridge from Ethereum to Sui?</summary><div class="a"><p><p>Connect an Ethereum wallet and a Sui wallet, select WBTC, LBTC, ETH, WETH, or USDT, enter the amount and recipient, approve the ERC-20 allowance if prompted, then sign the deposit. The Move coin appears on Sui after the deposit is finalized and verified.</p></p></div></details>
+<details class="qa"><summary>Do I need SUI before bridging to Sui?</summary><div class="a"><p><p>Not to receive the bridged asset, but yes to use it: Sui actions require SUI for gas. Keep SUI in the destination wallet and ETH on Ethereum for approvals and a return claim.</p></p></div></details>
+<details class="qa"><summary>Is Sui Bridge safe to use?</summary><div class="a"><p><p>It uses stake-weighted signatures from Sui validators, and the v1 code was audited by OtterSec and Zellic, but an audit does not remove smart-contract, cross-chain, or phishing risk. Verify the site and contract before signing, and never enter a seed phrase.</p></p></div></details>
+<details class="qa"><summary>Should I use the native bridge or a third-party one like Wormhole?</summary><div class="a"><p><p>The native bridge is validator-operated and covers the core Ethereum &lt;-&gt; Sui route for its supported assets; third-party bridges use separate guardian or relayer networks and often support more chains and tokens. Choose by the asset and route, compare quoted fees, and use the <a href="https://github.com/MystenLabs/sui/blob/main/bridge/SUI_NATIVE_BRIDGE_PRIMER.md" rel="noopener noreferrer" target="_blank">native bridge primer</a> for the design trade-offs.</p></p></div></details>
+</div>
+</details>
+<section class="field-notes reveal doc-sec" id="notes">
+<h2>Notes before you use Sui Bridge</h2>
+<div class="fn-body"><p><strong>Practitioner take:</strong> the native bridge is the straightforward path for Ethereum-to-Sui moves of its supported assets; the return trip is two transactions, not one.</p><p>Burning the Sui-side asset does not finish a withdrawal: the manual Ethereum claim releases the escrowed tokens and costs Ethereum gas.</p><p>Before signing, confirm the interface, contract, networks, recipient address, and gas balances in your own wallets.</p><p>Everything on this page was checked against Sui's published documentation and on-chain contract references, last reviewed 21 July 2026.</p><p><strong>Independent reference — confirm the route in your own wallet.</strong></p></div>
+</section>
+</div>
+</div>
+</div>
+<footer class="site-foot"><div class="wrap">Sui Bridge Guide &amp; Technical Reference · <a href="dashboard/" rel="noopener noreferrer" target="_blank">Open Sui Bridge App ↗</a> · © 2026</div></footer>
+</main>
+</div>
 <script>
 /* Sui Bridge: route preview, mobile nav, scroll-reveal. */
 (function () {
@@ -596,6 +657,17 @@ html.js .reveal.in { opacity: 1; transform: none; }
     if (el && el.tagName === "DETAILS") { el.open = true; el.classList.add("in"); }
   });
 
+  })();
+  (function(){
+    var links=[].slice.call(document.querySelectorAll(".toc a"));
+    if(!links.length)return;
+    var secs=[].slice.call(document.querySelectorAll(".doc-main [id]")).filter(function(s){return document.querySelector('.toc a[href="#'+s.id+'"]');});
+    if(!secs.length)return;
+    function setActive(id){links.forEach(function(a){a.classList.toggle("active",a.getAttribute("href")==="#"+id);});}
+    function update(){var cur=secs[0];for(var i=0;i<secs.length;i++){if(secs[i].getBoundingClientRect().top-120<=0)cur=secs[i];else break;}if(window.innerHeight+window.scrollY>=document.documentElement.scrollHeight-4)cur=secs[secs.length-1];if(cur)setActive(cur.id);}
+    window.addEventListener("scroll",update,{passive:true});
+    window.addEventListener("resize",update);
+    update();
   })();
   </script>
 </body>
